@@ -1,4 +1,4 @@
 backendTheme
 ============
 
-Backend Theme
+Pulpitum Backend Theme
