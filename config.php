@@ -36,7 +36,7 @@ return array(
         'before' => function($theme)
         {
             // You can remove this line anytime.
-            $theme->setTitle('Copyright ©  2013 - Laravel.in.th');
+            $theme->setTitle('Copyright ©  '.date("Y").' - Laravel.in.th');
 
             // Breadcrumb template.
             // $theme->breadcrumb()->setTemplate('
@@ -59,7 +59,9 @@ return array(
         {
             // You may use this event to set up your assets.
             // $theme->asset()->usePath()->add('core', 'core.js');
-            // $theme->asset()->add('jquery', 'vendor/jquery/jquery.min.js');
+            $theme->asset()->usePath()->add('jquery', 'js/jquery-1.7.2.min.js');
+			$theme->asset()->usePath()->add('bootstrap', 'js/bootstrap.js');
+			$theme->asset()->usePath()->add('base', 'js/base.js');
             // $theme->asset()->add('jquery-ui', 'vendor/jqueryui/jquery-ui.min.js', array('jquery'));
 
             // Partial composer.
@@ -67,16 +69,22 @@ return array(
             // {
             //     $view->with('auth', Auth::user());
             // });
+			
+			$theme->asset()->usePath()->add('bootstrap', 'css/bootstrap.min.css');
+			$theme->asset()->usePath()->add('bootstrap-responsive', 'css/bootstrap-responsive.min.css');
+			$theme->asset()->usePath()->add('font-awesome', 'css/font-awesome.css');
+			$theme->asset()->usePath()->add('style', 'css/style.css');
         },
 
         // Listen on event before render a layout,
         // this should call to assign style, script for a layout.
         'beforeRenderLayout' => array(
-
-            'default' => function($theme)
+	
+            'login' => function($theme)
             {
-                // $theme->asset()->usePath()->add('ipad', 'css/layouts/ipad.css');
-            }
+				$theme->asset()->usePath()->add('signin', 'css/pages/signin.css');
+				
+			}
 
         )
 
