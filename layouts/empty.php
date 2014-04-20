@@ -9,14 +9,9 @@
         <?php echo Theme::asset()->scripts(); ?>
     </head>
     <body>
-        <?php echo Theme::partial('header'); ?>
-
         <div class="container">
             <?php echo Theme::content(); ?>
         </div>
-
-        <?php echo Theme::partial('footer'); ?>
-
         <?php echo Theme::asset()->container('footer')->scripts(); ?>
     </body>
 </html>
